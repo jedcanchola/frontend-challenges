@@ -1,0 +1,93 @@
+/* 
+  COLOR
+  - Primary: #1f314f;
+  - Secondary: #68778d;
+  - Tertiary: #d5e1ef;
+  - White: #fff;
+
+  TYPOGRAPHY
+  - Preset 1: 22px, 120% line height, 0px letter spacing
+  - Preset 2: 12px, 140% line height, 0.2px letter spacing
+
+  SPACING
+  - 500: 40px
+  - 300: 24px
+  - 200: 16px
+*/
+
+:root {
+  --primary: #1f314f;
+  --secondary: #68778d;
+  --tertiary: #d5e1ef;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--tertiary);
+  height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.qr-card {
+  background-color: white;
+  color: var(--primary);
+  width: 320px;
+  height: 499px;
+  border-radius: 20px;
+  padding: 16px 16px 40px;
+  box-shadow: 0px 5px 30px -20px var(--secondary);
+}
+
+.qr-card__img {
+  width: 288px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.qr-text__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+
+  text-align: center;
+}
+
+.qr-text__section h2 {
+  font-size: 22px;
+  line-height: 120%;
+}
+
+.qr-text__section p {
+  color: var(--secondary);
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10%;
+}
