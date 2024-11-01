@@ -1,0 +1,188 @@
+/* 
+  TYPOGRAPHY
+  - Preset 1: Inter  Bold, 24px, 150% lh 0px ls
+  - Preset 2: Inter  Bold, 14px, 150% lh 0px ls
+  - Preset 3: Inter  Bold, 14px, 150% lh 0px ls
+
+  SPACING
+
+  4px, 8px, 12px, 16px, 24px, 40px
+*/
+
+:root {
+  --primary: #252525;
+  --gray: #1f1f1f;
+  --gray-tint: #333333;
+  --green: #c4f82a;
+  --white: #fff;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(./assets/fonts/static/Inter-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(./assets/fonts/static/Inter-SemiBold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(./assets/fonts/static/Inter-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* GENERAL STYLES */
+
+body {
+  background-color: var(--gray);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+
+}
+
+.dev-card {
+  background-color: var(--primary);
+  padding: 40px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 384px;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 88px;
+}
+
+.info {
+  text-align: center;
+  font-size: 14px;
+  font-style: normal !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info h1 {
+  font-size: 24px;
+  line-height: 150%;
+}
+
+.info p {
+  color: var(--green);
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.summary {
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  background-color: var(--gray-tint);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--green);
+  color: var(--gray);
+}
+
+
+.attribution {
+  position: absolute;
+  bottom: 5%;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+  .dev-card {
+    width: 456px;
+  }
+
+  .attribution {
+    bottom: 8%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 425px) {
+
+
+  .dev-card {
+    width: 327px;
+    font-size: 85%;
+  }
+
+  .dev-card p {
+    font-size: 14px;
+  }
+
+  .summary p {
+    font-size: 12px;
+  }
+
+  .attribution {
+    bottom: 5%;
+  }
+}
