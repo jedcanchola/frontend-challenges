@@ -9,3 +9,6 @@
 ## Social Links Profile Challenge
 [QR code component challenge](https://jedcanchola.github.io/frontend-challenges/social-links-profile-main)
 
+## Social Links Profile Challenge
+[QR code component challenge](https://jedcanchola.github.io/frontend-challenges/recipe-page-main)
+
