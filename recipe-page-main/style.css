@@ -20,6 +20,7 @@
     --stone-100: #F3E5D7;
     --brown: #854632;
     --white: #fff;
+    font-size: 62.5%;
 }
 
 @font-face {
@@ -40,6 +41,7 @@
 html {
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+    font-size: 62.5%;
 }
 
 *,
@@ -58,10 +60,59 @@ a {
     text-decoration: none;
 }
 
-h1,
+
 h2 {
     font-family: 'Young Serif';
+    font-weight: 400;
+    color: var(--brown);
 }
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* PRESETS */
+
+
+.pr1 {
+    font-size: 4rem;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.pr2 {
+    font-size: 2.8rem;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.pr3 {
+    font-family: 'Outfit';
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+.pr4 {
+    font-family: 'Outfit';
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0px;
+}
+
+.pr5 {
+    font-family: 'Outfit';
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 150%;
+    letter-spacing: 0px;
+}
+
+
+
 
 /* GENERAL STYLES */
 
@@ -69,16 +120,42 @@ body {
     background-color: var(--stone-100);
     padding: 128px 48px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-img {
-    width: 100%;
-    border-radius: 12px;
+
+ul {
+    color: var(--brown);
+    margin-left: 24px;
 }
 
-ul{
-    color: var(--primary);
-    gap: 24px;
+ul li::marker {
+    font-size: .8rem;
+}
+
+ol {
+    margin-left: 24px;
+}
+
+ol li::marker {
+    color: var(--brown);
+    font-weight: bold;
+
+}
+
+td,
+th {
+    border-bottom: 1px solid var(--stone-150);
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--stone-150);
+    /* color: var(--stone-150); */
 }
 
 
@@ -88,12 +165,23 @@ ul{
     flex-direction: column;
 }
 
+.img-mobile {
+    display: none;
+}
+
+.img {
+    width: 656px;
+    height: 300px;
+    border-radius: 12px;
+    aspect-ratio: 1;
+}
+
 /* DESKTOP */
 .card {
     background-color: var(--white);
     border-radius: 24px;
     padding: 40px;
-    width: 736px;
+    max-width: 736px;
     gap: 40px;
 }
 
@@ -106,30 +194,176 @@ ul{
 .title {
     gap: 24px;
 
-    & h1 {
+    & h2 {
         color: var(--stone);
-        font-size: 40px;
-        font-weight: bold;
     }
 
     & p {
         color: var(--stone-600);
-        font-size: 16px;
-        font-weight: 300;
     }
 }
 
-.preparation{
+.preparation {
     gap: 16px;
     padding: 24px;
     background-color: var(--secondary);
     border-radius: 12px;
 
-    & h2{
+    & h2 {
         color: var(--primary);
     }
 
-    &  ul{
-        margin-left: 24px;
+    & ul {
+
+        gap: 8px;
+    }
+
+    & p {
+        color: var(--stone-600);
+    }
+
+    & p span {
+        font-weight: bold;
+        margin-left: 16px;
+    }
+}
+
+.ingredients {
+    gap: 24px;
+
+    & ul {
+        gap: 8px;
+    }
+
+    & li p {
+        color: var(--stone-600);
+        margin-left: 16px;
+    }
+}
+
+.instructions {
+
+    gap: 24px;
+
+
+
+    & p {
+        color: var(--stone-600);
+        font-weight: 400;
+        margin-left: 16px;
+    }
+
+    & span {
+        font-weight: bold;
+
+    }
+
+    & ol {
+        gap: 8px;
+    }
+}
+
+.nutrition {
+    gap: 24px;
+
+    & p {
+        color: var(--stone-600);
+        font-weight: 400;
+    }
+
+    & table {
+        text-align: left;
+        border-spacing: 0;
+    }
+
+
+    & th {
+        padding-left: 32px;
+        padding-bottom: 12px;
+        color: var(--stone-600);
+        font-weight: 400;
+    }
+
+    & td {
+        padding: 12px 0;
+        padding-left: 32px;
+    }
+
+
+    /* I would like a suggestion on how to position the th without
+        Interferring with the td elements 
+    */
+
+    & th.value {
+        padding-left: -1px;
+    }
+
+
+    & td.value,
+    th.value {
+        color: var(--brown);
+        font-weight: 600;
+
+    }
+
+
+    & table {
+        width: 100%;
+        border-collapse: collapse;
+        color: var(--stone-600);
+        font-weight: 400;
+
+    }
+
+
+    & tr:last-child td {
+        border-bottom: none;
+    }
+
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 616px;
+    }
+
+    .img {
+        /* width: 536px; */
+        height: 300px;
+
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 375px) {
+
+    body {
+        padding: 0;
+    }
+
+    .card {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .img-mobile {
+        display: block;
+        height: 171px;
+    }
+
+    .title h2 {
+        font-size: 3.2rem;
+    }
+
+    .attribution {
+        display: none;
     }
 }
